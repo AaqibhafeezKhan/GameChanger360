@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Mobile Menu Toggle
   const menuBtn = document.querySelector(".mobile-menu-btn");
   const navMenu = document.querySelector(".nav-menu");
 
@@ -17,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Smooth Scrolling for Anchor Links
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -32,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Highlight Navigation on Scroll
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".nav-menu a");
 
@@ -54,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   window.addEventListener("scroll", highlightNavigation);
 
-  // Fade-in Animation using Intersection Observer
   const faders = document.querySelectorAll(
     ".solution-card, .service-card, .industry-card, .about-card"
   );
@@ -73,7 +69,6 @@ document.addEventListener("DOMContentLoaded", function () {
     appearOnScroll.observe(fader);
   });
 
-  // Hero Slider Functionality with Smooth Fade Transition
   const slides = document.querySelectorAll(".hero-slider .slide");
   let currentSlide = 0;
   function showSlide(index) {
@@ -85,6 +80,5 @@ document.addEventListener("DOMContentLoaded", function () {
     currentSlide = (currentSlide + 1) % slides.length;
     showSlide(currentSlide);
   }
-  // Auto slide every 5 seconds
   setInterval(nextSlide, 5000);
 });
