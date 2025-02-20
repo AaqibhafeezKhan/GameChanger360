@@ -1,7 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
   const menuBtn = document.querySelector(".mobile-menu-btn");
   const navMenu = document.querySelector(".nav-menu");
-
   menuBtn?.addEventListener("click", () => {
     navMenu.classList.toggle("active");
     const spans = menuBtn.querySelectorAll("span");
@@ -15,24 +14,21 @@ document.addEventListener("DOMContentLoaded", function () {
       spans[2].style.transform = "";
     }
   });
-
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener("click", function (e) {
+    anchor.addEventListener("click", function(e) {
       e.preventDefault();
       const target = document.querySelector(this.getAttribute("href"));
       if (target) {
         target.scrollIntoView({
           behavior: "smooth",
-          block: "start",
+          block: "start"
         });
         navMenu.classList.remove("active");
       }
     });
   });
-
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".nav-menu a");
-
   function highlightNavigation() {
     const scrollPosition = window.scrollY;
     sections.forEach((section) => {
@@ -50,13 +46,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
   window.addEventListener("scroll", highlightNavigation);
-
-  const faders = document.querySelectorAll(
-    ".solution-card, .service-card, .industry-card, .about-card"
-  );
+  const faders = document.querySelectorAll(".solution-card, .service-card, .industry-card, .about-card");
   const appearOptions = {
     threshold: 0.2,
-    rootMargin: "0px 0px -50px 0px",
+    rootMargin: "0px 0px -50px 0px"
   };
   const appearOnScroll = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
@@ -68,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
   faders.forEach((fader) => {
     appearOnScroll.observe(fader);
   });
-
   const slides = document.querySelectorAll(".hero-slider .slide");
   let currentSlide = 0;
   function showSlide(index) {
