@@ -43,8 +43,8 @@ body {
   padding: 0 20px;
 }
 .logo-img {
-  height: 50px;
-  width: auto;
+  height: auto;
+  width: 150px; 
 }
 .nav-menu {
   display: flex;
